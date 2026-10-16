@@ -11,5 +11,5 @@ export const store = configureStore({
 
 store.subscribe(() => {
   const { auth } = store.getState();
-  saveState({auth: {..auth,error:null}});
+  saveState({auth: {...auth,error:null}});
 });
