@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../features/auth/authSlice';
 
@@ -11,7 +11,6 @@ export default function Navbar() {
     dispatch(logout());
     navigate('/');
   }
-
 
   return (
     <nav className="navbar">
