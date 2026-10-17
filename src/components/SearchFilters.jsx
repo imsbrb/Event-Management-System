@@ -14,7 +14,15 @@ export default function SearchFilters({ keyword, city, category, categories, onC
     return () => clearTimeout(timer);
   }, [text, cityText, keyword, city, onChange]);
 
-  
+  // When the URL changes from outside (Back button, Clear), update the inputs
+useEffect(() => {
+  setText((prev) => (prev.trim() === keyword ? prev : keyword));
+}, [keyword]);
+
+useEffect(() => {
+  setCityText((prev) => (prev.trim() === city ? prev : city));
+}, [city]);
+
   function handleClear() {
     setText('');
     setCityText('');
