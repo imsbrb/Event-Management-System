@@ -184,3 +184,32 @@
 }
 .toast-success { background: #1a7f37; }
 .toast-info { background: #444; }
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+.tab {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+.tab.active {
+  border-bottom-color: #4f46e5;
+  font-weight: 600;
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #555;
+}
