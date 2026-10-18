@@ -5,6 +5,7 @@ import { fetchEventById, clearSelected } from '../features/events/eventsSlice';
 import { getEventImage, getCategory, formatEventDate } from '../utils/eventHelpers';
 import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
+import RegisterButton from '../components/RegisterButton';
 
 const STATUS_LABELS = {
   onsale: 'On sale',
@@ -103,7 +104,7 @@ export default function EventDetails() {
         )}
       </div>
 
-      {/* Registration button goes here in the next part */}
+      <RegisterButton event={event} />
 
       {(event.info || event.pleaseNote) && (
         <section className="details-notes">

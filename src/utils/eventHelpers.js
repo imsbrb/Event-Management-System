@@ -28,3 +28,21 @@ export function formatEventDate(event) {
     ...(start.localTime && { hour: 'numeric', minute: '2-digit' }),
   });
 }
+// What we store when someone registers: a small copy of the event
+export function toRegistration(event) {
+  const venue = getVenue(event);
+  const start = event.dates?.start ?? {};
+  return {
+    eventId: event.id,
+    name: event.name,
+    image: getEventImage(event),
+    category: getCategory(event),
+    venueName: venue.name,
+    city: venue.city,
+    localDate: start.localDate ?? null,
+    localTime: start.localTime ?? null,
+    dateTime: start.dateTime ?? null,
+    url: event.url ?? null,
+    registeredAt: new Date().toISOString(),
+  };
+}
