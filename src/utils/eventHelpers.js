@@ -46,3 +46,15 @@ export function toRegistration(event) {
     registeredAt: new Date().toISOString(),
   };
 }
+
+// Has this registered event already happened?
+export function isPastRegistration(reg) {
+  const when = reg.dateTime ?? (reg.localDate ? `${reg.localDate}T23:59:59` : null);
+  if (!when) return false; // no date known, so treat it as upcoming
+  return new Date(when) < new Date();
+}
+
+// Sort key: date + time as one string, e.g. "2026-11-02T19:30:00"
+export function registrationSortKey(reg) {
+  return `${reg.localDate ?? '9999-12-31'}T${reg.localTime ?? '00:00:00'}`;
+}

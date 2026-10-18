@@ -8,6 +8,7 @@ import Register from './pages/Register.jsx';
 import NotFound from './pages/NotFound.jsx';
 import EventDetails from './pages/EventDetails.jsx';
 import './App.css';
+import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
     return (
@@ -17,11 +18,12 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/events" element={<Events />} />
-                    <Route path="/my-events" element={<MyEvents />} />
+                    
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/events/:id" element={<EventDetails />} />
                     <Route path="*" element={<NotFound />} />
+                    <Route  path="/my-events" element={ <ProtectedRoute> <MyEvents /> </ProtectedRoute>  }/>
                 </Routes>
         </main>
      </>
