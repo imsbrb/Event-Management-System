@@ -99,7 +99,7 @@
   height: 36px;
   margin: 0 auto 0.5rem;
   border: 4px solid #ddd;
-  border-top-color: #555;
+  border-top-color: #74cdb4;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -184,7 +184,7 @@
   margin-bottom: 1.5rem;
 }
 .muted {
-  color: #666;
+  color: #5f7a76;
   font-size: 0.9rem;
 }
 .btn-outline {
@@ -269,7 +269,7 @@
 .empty-state {
   text-align: center;
   padding: 3rem 1rem;
-  color: #555;
+  color: #637a77;
 }
 .auth-page {
   max-width: 420px;
@@ -317,4 +317,42 @@
   color: var(--color-danger);
   font-size: 0.9rem;
   margin: 0;
+}
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+  border-radius: var(--radius);
+}
+.hero p {
+  color: var(--color-muted);
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.category-tile {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.category-tile:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
 }
