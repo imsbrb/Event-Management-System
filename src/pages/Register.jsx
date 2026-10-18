@@ -74,6 +74,8 @@ export default function Register() {
         </label>
         
         {errors.confirm && <p className="error">{errors.confirm}</p>}
+        {error && <p className="error">{error}</p>}
+
         <button type="submit">Register</button>
         
       </form>

@@ -1,4 +1,4 @@
-import {Routes,Route,BrowserRouter} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import Events from './pages/Events.jsx';
