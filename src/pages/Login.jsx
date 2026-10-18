@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+
 import { login, clearAuthError } from '../features/auth/authSlice';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 
 export default function Login(){
     const [form,setForm] =useState({email:'',password:''});
@@ -9,6 +10,7 @@ export default function Login(){
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
     const {currentUser, error} =  useSelector((state) => state.auth);
 
     useEffect(() => {
@@ -16,8 +18,11 @@ export default function Login(){
     }, [dispatch]);
 
     useEffect(() => {
-      if(currentUser) navigate('/events');
-    }, [currentUser, navigate]);
+    if (currentUser) {
+      const destination = location.state?.from?.pathname ?? '/events';
+      navigate(destination, { replace: true });
+    }
+    }, [currentUser, navigate, location]);
 
     function handleChange(e){
       setForm({...form,[e.target.name]:e.target.value});
