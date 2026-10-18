@@ -82,3 +82,57 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+.event-details {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.details-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.details-header {
+  margin: 1.25rem 0;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.status-onsale { background: #e6f6ea; }
+.status-cancelled,
+.status-postponed { background: #fde8e8; }
+.status-rescheduled,
+.status-offsale { background: #fff4e0; }
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.details-grid section,
+.details-notes {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.details-notes {
+  margin-bottom: 1.5rem;
+}
+.muted {
+  color: #666;
+  font-size: 0.9rem;
+}
+.btn-outline {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  text-decoration: none;
+}
